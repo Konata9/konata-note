@@ -1,0 +1,279 @@
+body {
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 1280px;
+  background: #DEDEDE;
+  margin: 0 auto;
+}
+
+
+/* ----------- header 部分 START----------------*/
+
+.header {
+  width: 100%;
+  height: 60px;
+  background: #333333;
+}
+
+.header::after {
+  clear: both;
+}
+
+.h-title {
+  color: #FFFFFF;
+  margin: 0 0 0px 40px;
+  float: left;
+  line-height: 60px;
+}
+
+.h-title::after {
+  clear: both;
+}
+
+.nav {
+  float: right;
+}
+
+.nav-list {
+  font-size: 12px;
+  color: #FFFFFF;
+  margin: 0;
+  float: left;
+}
+
+.nav-list::after {
+  clear: both;
+}
+
+.nav-list li {
+  width: 60px;
+  line-height: 60px;
+  margin-right: 30px;
+  float: left;
+}
+
+.nav-list li::after {
+  clear: both;
+}
+
+.gray-text {
+  color: #7B7A76;
+}
+
+
+/* ----------- header 部分 END ------------------*/
+
+
+/* ----------- main 部分 START ------------------*/
+
+.main {
+  padding: 30px;
+}
+
+.article {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #CDCDCD;
+  box-shadow: 1px 1px 1px #848484;
+  margin-bottom: 30px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.a-title-h1 {
+  font-size: 18px;
+}
+
+.a-title-h2 {
+  font-size: 14px;
+  color: #768791;
+}
+
+.a-time {
+  font-size: 12px;
+  color: #768791;
+}
+
+.a-section p {
+  text-indent: 2em;
+}
+
+.f-blod {
+  font-weight: bold;
+}
+
+.section-list {
+  list-style: none;
+  margin: 10px;
+}
+
+.pic-set {
+  width: 120px;
+  height: 120px;
+  border: 1px solid #CECECE;
+  padding: 5px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.pic-des {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.pic-content {
+  width: 78px;
+  height: 78px;
+}
+
+.table-cap {
+  font-size: 13px;
+}
+
+.table-data {
+  width: 100%;
+  font-size: 12px;
+  text-align: left;
+  border-spacing: 0;
+  border-collapse: 0;
+  border: 1px solid #DDDDDD;
+}
+
+.table-border-top {
+  border-top: 1px solid #DDDDDD;
+}
+
+.table-border-right {
+  border-right: 1px solid #DDDDDD;
+}
+
+.table-border-bottom {
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.table-border-left {
+  border-left: 1px solid #DDDDDD;
+}
+
+.table-head {
+  background: #000000;
+  color: #FFFFFF;
+}
+
+.table-head th {
+  padding-left: 5px;
+}
+
+.table-content td {
+  padding-left: 5px;
+}
+
+.table-footer td {
+  padding-left: 5px;
+  font-weight: bold;
+  background: #DDDDDD;
+}
+
+
+/* ----------- aside 部分 START ----------------*/
+
+.aside {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #CDCDCD;
+  box-shadow: 1px 1px 1px #848484;
+  margin-bottom: 30px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.aside-title {
+  height: 40px;
+  line-height: 40px;
+  font-size: 15px;
+  padding-left: 15px;
+  border-left: 5px solid #CCCCCC;
+}
+
+.aside-form {}
+
+.form-input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.input-left {
+  width: 30%;
+  text-align: right;
+  display: inline-block;
+}
+
+.input-right {
+  width: 69%;
+  vertical-align: top;
+  display: inline-block;
+}
+
+.form-input label {
+  font-size: 13px;
+}
+
+.form-input input[type="text"] {
+  height: 20px;
+  border: 1px solid #CDCDCD;
+}
+
+.form-input textarea{
+  width: 90%;
+}
+
+.input-desc {
+  font-size: 12px;
+  color: #9CAFC0;
+}
+
+.form-btn {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  color: #FFFFFF;
+  font-size: 16px;
+  background: #3355D0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+}
+
+
+/* ----------- aside 部分 END -------------------*/
+
+
+/* ----------- main 部分 END ---------------------*/
+
+
+/* ----------- footer 部分 START ----------------*/
+
+.footer {
+  width: 100%;
+  height: 60px;
+  background: #000000;
+}
+
+.footer-content {
+  width: 100%;
+  color: #FFFFFF;
+  font-size: 12px;
+  line-height: 60px;
+  text-align: center;
+  vertical-align: center;
+}
+
+
+/* ----------- footer 部分 END -------------------*/

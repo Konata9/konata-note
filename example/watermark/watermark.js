@@ -5,7 +5,7 @@
  *  text, x, y, width, height, rotate, text-align, font-size, font-weight, color, bg, opacity, 
  */
 
-function WaterMark(text, options) {
+function WaterMark(text, options, invisible = true) {
   var options = options ? options : {}
 
   this._text = text
@@ -24,7 +24,7 @@ function WaterMark(text, options) {
   this._waterMarkFontWeight = options.fontWeight || 'none'
   this._waterMarkColor = options.color || '#c5c8ce'
   this._waterMarkBackgroundColor = options.bgColor || 'transparent'
-  this._waterMarkOpacity = options.opacity || 0.5
+  this._waterMarkOpacity = invisible ? 0.005 : (options.opacity || 0.5)
 
   //初始化容器样式
   this.init()
@@ -104,8 +104,23 @@ WaterMark.prototype.create = function () {
 
 window.onload = function () {
   // 初始化水印
-  var waterMark = new WaterMark('测试用水印，1234567|2234', { opacity: .6 })
+  var waterMark = new WaterMark('测试用水印，1234567|2234', { opacity: .6, rotate: 35 }, false)
   waterMark.create()
+
+  var code = ''
+
+  document.body.onkeypress = function (e) {
+    var keychar = String.fromCharCode(e.keyCode)
+    code += keychar
+    // if (e.keyCode === '13') {
+    //   console.log(e)
+    // }
+  }
+
+  document.onkeyup = function (e) {
+    console.log(code)
+  }
+
 }
 
 // onresize 时要加上节流方法，不然要爆炸

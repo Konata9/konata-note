@@ -109,17 +109,22 @@ window.onload = function () {
 
   var code = ''
 
-  document.body.onkeypress = function (e) {
+  // document.body.onkeypress = function (e) {
+  //   var keychar = String.fromCharCode(e.keyCode)
+  //   code += keychar
+  //   // if (e.keyCode === '13') {
+  //   //   console.log(e)
+  //   // }
+  // }
+
+  document.getElementById('Description').onkeypress = function (e) {
     var keychar = String.fromCharCode(e.keyCode)
     code += keychar
-    // if (e.keyCode === '13') {
-    //   console.log(e)
-    // }
   }
 
-  document.onkeyup = function (e) {
-    console.log(code)
-  }
+  // document.onkeyup = function (e) {
+  //   console.log(code)
+  // }
 
 }
 

@@ -1,12 +1,14 @@
 (function(root) {
   // 无 new 构建实例
-  const jQuery = function() {
+  const jQuery = function(selector, context) {
     // 如果是 new jQuery() 会重复调用自身，造成死循环，所以借助 init 方法
     return new jQuery.prototype.init();
   };
 
   jQuery.fn = jQuery.prototype = {
-    init: function() {},
+    init: function(selector, context) {
+      context = context || document;
+    },
     css: function() {}
   };
 

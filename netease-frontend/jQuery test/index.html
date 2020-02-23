@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+    .section-2 {
+      margin-top: 1000px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <form id="myForm">
+      <input type="text" id="input" name="phone" />
+      <input type="text" id="input" name="email" />
+      <input type="text" id="input" name="user" />
+    </form>
+  </div>
+
+  <div class="section-1">
+    <img class="lazy-img" src="./img/0.jpeg" data-src="./img/1.jpg" />
+    <img class="lazy-img" src="./img/0.jpeg" data-src="./img/1.jpg" />
+  </div>
+
+  <div class="section-2">
+    <img class="lazy-img" src="./img/0.jpeg" data-src="./img/1.jpg" />
+    <img class="lazy-img" src="./img/0.jpeg" data-src="./img/1.jpg" />
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    (function () {
+      const viewportHeight = $(window).height()
+
+      const observer = new IntersectionObserver(function (entries = []) {
+        entries.forEach((entry = {}) => {
+          const { target = {}, intersectionRatio } = entry
+          const $target = $(target)
+          const loaded = $target.attr('loaded')
+          if (intersectionRatio > 0 && intersectionRatio <= 1 && !loaded) {
+            const url = $target.attr('data-src')
+            $target.attr({ src: url, loaded: true })
+          }
+        })
+      })
+
+      $.fn.extend({
+        lazyLoad: function () {
+          this.each(function () {
+            observer.observe(this)
+          })
+        }
+      })
+    })()
+  </script>
+
+  <script>
+      (function () {
+        const DEFAULT_PATTERN = {
+          mobile: /(\+86)?1[3-9][0-9]{9}/,
+          id: /[0-9]{6}(1|2)[0-9]{3}((0[1-9])|(1[0-2]))((0[1-9])|([1-2][0-9])|(3[0-1]))[0-9]{3}([0-9xX])/,
+          email: /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
+        }
+
+        $.fn.extend({
+          validate: function (options) {
+            const { defaultEvent: event = 'change', fields = [] } = options
+            const self = this
+            // console.log(this)
+            if (fields.length === 0) {
+              return
+            }
+
+            fields.forEach(function (field) {
+              const { name = null } = field;
+              console.log(self.find(`[name=${name}]`))
+            })
+          }
+        })
+      })()
+  </script>
+  <script>
+    $(function () {
+      $('.lazy-img').lazyLoad()
+
+      $('#myForm').validate({
+        defaultEvent: 'change',
+        fields: [
+          { name: 'phone', required: true },
+          { name: 'email', required: true },
+          { name: 'user', required: true },
+        ]
+      })
+    })
+  </script>
+</body>
+
+</html>
